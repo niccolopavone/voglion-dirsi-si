@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow, noarchive"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cinque strade per dire sì: concept per il sito di nozze</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&family=Marcellus&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/base.css">
+<style>
+.intro{padding:clamp(80px,12vw,160px) 0 clamp(40px,6vw,70px)}
+.intro h1{font-size:clamp(48px,9vw,128px);max-width:12ch}.intro h1 em{font-style:italic;font-weight:400}
+.intro p{max-width:60ch;font-size:clamp(17px,1.5vw,20px);color:var(--muted);margin-top:26px}
+.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;padding-bottom:120px}
+.c{position:relative;display:block;text-decoration:none;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;color:#F1E9DA;background:#1E2A33}
+.c img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease;opacity:.85}
+.c:hover img{transform:scale(1.04)}
+.c .t{position:absolute;inset:auto 0 0 0;padding:26px;background:linear-gradient(transparent,rgba(20,26,22,.85))}
+.c h2{font-size:40px;margin-bottom:6px}.c p{font-style:italic;font-family:var(--display);font-size:20px;opacity:.9}
+.c span{display:inline-block;margin-top:14px;font-size:14px;border-bottom:1px solid currentColor}
+.note{font-size:14px;color:var(--muted);padding-bottom:80px}
+</style></head>
+<body>
+<section class="intro section"><div class="wrap"><h1>Cinque strade per dire <em>sì</em></h1>
+<p>Cinque landing complete, una per concept, con contenuti segnaposto e fotografie a tema. Stesso cuore (Salento, Egitto, un filo di Marocco), stessa palette, cinque personalità. Aprile una per volta e scegliete quella che vi fa venire voglia di scrivere i testi.</p></div></section>
+<section class="section"><div class="wrap list"><a class="c" href="rotta/" data-reveal>
+  <img src="https://images.unsplash.com/photo-1502640403806-cf2ac7a5d37a?auto=format&fit=crop&q=70&w=1200" alt="" loading="lazy">
+  <div class="t"><h2>La Rotta</h2><p>dal Cairo al Salento, una carta nautica che si disegna da sola</p><span>Apri il concept</span></div></a>
+<a class="c" href="papiro/" data-reveal>
+  <img src="https://images.unsplash.com/photo-1584719866406-c76ddee48493?auto=format&fit=crop&q=70&w=1200" alt="" loading="lazy">
+  <div class="t"><h2>Papiro e Pietra</h2><p>l'Egitto in filigrana, la pietra leccese sotto i piedi</p><span>Apri il concept</span></div></a>
+<a class="c" href="zellige/" data-reveal>
+  <img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&q=70&w=1200" alt="" loading="lazy">
+  <div class="t"><h2>Zellige</h2><p>una geometria che si ricompone a ogni gesto</p><span>Apri il concept</span></div></a>
+<a class="c" href="ulivo/" data-reveal>
+  <img src="https://images.unsplash.com/photo-1458966480358-a0ac42de0a7a?auto=format&fit=crop&q=70&w=1200" alt="" loading="lazy">
+  <div class="t"><h2>L'Ulivo</h2><p>un albero vero, tridimensionale, che cresce con gli ospiti</p><span>Apri il concept</span></div></a>
+<a class="c" href="cartoline/" data-reveal>
+  <img src="https://images.unsplash.com/photo-1519594445471-0e5f86b3fb09?auto=format&fit=crop&q=70&w=1200" alt="" loading="lazy">
+  <div class="t"><h2>Cartoline</h2><p>tre luoghi, tre francobolli, un unico indirizzo</p><span>Apri il concept</span></div></a></div>
+<div class="wrap note">Nomi, date, luoghi, prezzi e testi sono segnaposto. Fotografie da Unsplash, da sostituire con le vostre. Costruito con GSAP e Three.js.</div></section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/base.js"></script>
+</body></html>
