@@ -1,0 +1,40 @@
+/* Save the Date: mobile first, una schermata, poi la foto da grattare */
+:root{--bg:#F1E9DA;--fg:#1E2A33;--muted:#5E5A50;--accent:#6E7C4A;--accent-2:#B8953E;--card:#F7F1E5;--line:rgba(30,42,51,.16);
+  --display:"Cormorant Garamond",Georgia,serif;--body:"Jost",system-ui,sans-serif;--radius:8px}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-weight:300;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2{font-family:var(--display);font-weight:500;line-height:1;letter-spacing:-.01em}
+a{color:inherit}
+.std{max-width:520px;margin:0 auto;min-height:100svh;display:flex;flex-direction:column;position:relative}
+.motif{position:relative;height:46svh;min-height:300px;overflow:hidden}
+.motif svg,.motif canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.motif .over{position:absolute;inset:auto 0 0 0;padding:0 24px 18px;z-index:2}
+.copy{padding:22px 24px 10px}
+.kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.names{font-size:clamp(52px,16vw,84px);margin:8px 0 6px}
+.names em{font-style:italic;font-weight:400}
+.date{font-family:var(--display);font-size:clamp(26px,7vw,36px);font-style:italic}
+.venue{margin-top:8px;color:var(--muted);font-size:15px}
+.venue b{font-weight:400;color:var(--fg)}
+.hint{margin:22px 24px 10px;font-size:14px;color:var(--muted);display:flex;align-items:center;gap:10px}
+.hint i{display:inline-block;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);position:relative;flex:none}
+.hint i::after{content:"";position:absolute;left:5px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--accent);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{transform:scale(.7);opacity:.5}50%{transform:scale(1.1);opacity:1}}
+.card{margin:0 24px;position:relative;border-radius:var(--radius);overflow:hidden;background:var(--card);box-shadow:0 24px 50px -24px rgba(0,0,0,.45);aspect-ratio:4/5;touch-action:none}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.card canvas{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair}
+.card .caption{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;font-family:var(--display);font-style:italic;font-size:20px;color:#F1E9DA;background:linear-gradient(transparent,rgba(20,26,22,.7));opacity:0;transform:translateY(8px)}
+.card.revealed .caption{opacity:1;transform:none;transition:all .8s .3s}
+.reveal-btn{margin:12px 24px 0;align-self:flex-start;background:none;border:0;font:inherit;font-size:13px;color:var(--muted);text-decoration:underline;cursor:pointer;padding:0}
+.actions{display:flex;gap:10px;padding:22px 24px 10px;flex-wrap:wrap}
+.btn{flex:1;display:inline-flex;justify-content:center;align-items:center;gap:8px;font:inherit;font-size:15px;padding:14px 18px;border-radius:999px;border:1px solid var(--accent);background:var(--accent);color:#F1E9DA;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+.foot{padding:12px 24px 40px;font-size:13px;color:var(--muted)}
+.foot a{text-decoration:none;border-bottom:1px solid var(--line)}
+@media (min-width:760px){
+  body{display:grid;place-items:center;padding:40px 0}
+  .std{min-height:auto;background:var(--card);border-radius:28px;box-shadow:0 40px 90px -40px rgba(0,0,0,.5);overflow:hidden;border:10px solid #1E2A33;max-width:430px}
+  .motif{height:380px}
+}
+@media (prefers-reduced-motion: reduce){.hint i::after{animation:none}}
