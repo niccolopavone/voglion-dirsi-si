@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow, noarchive"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Save the Date: May &amp; Morgan, 1 giugno 2027</title>
+<meta name="description" content="May e Morgan si sposano il 1 giugno 2027 a Villa Savino. Save the date.">
+<meta property="og:title" content="Save the Date: May &amp; Morgan"><meta property="og:description" content="1 giugno 2027, Villa Savino. Gratta e scopri.">
+<meta name="theme-color" content="#223A4A">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&family=Marcellus&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../assets/std.css">
+<style>:root{--bg:#223A4A;--fg:#F1E9DA;--muted:#B9C3C9;--accent:#B8953E;--accent-2:#B8953E;--card:#1B2F3D;--line:rgba(241,233,218,.2)}
+.motif{background:#223A4A}.motif text{font-family:var(--display);fill:#F1E9DA}
+.btn.ghost{color:#F1E9DA}</style></head>
+<body>
+<main class="std">
+  <div class="motif"><svg viewBox="0 0 520 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs><pattern id="w" width="60" height="14" patternUnits="userSpaceOnUse"><path d="M0 7 Q15 0 30 7 T60 7" fill="none" stroke="#F1E9DA" stroke-opacity=".12"/></pattern></defs>
+<rect class="sea" width="520" height="440" fill="url(#w)"/>
+<path d="M0 90 C 90 60, 160 110, 260 70 C 340 40, 400 90, 520 50 L520 0 L0 0Z" fill="#F1E9DA" fill-opacity=".07"/>
+<path d="M0 410 C 120 380, 240 420, 380 390 C 450 375, 490 400, 520 390 L520 440 L0 440Z" fill="#F1E9DA" fill-opacity=".07"/>
+<path id="route" d="M 410 110 C 330 230, 290 280, 230 300 C 170 320, 130 330, 100 350" fill="none" stroke="#B8953E" stroke-width="2" stroke-dasharray="6 8"/>
+<g class="port" transform="translate(410 110)"><circle r="6" fill="#F1E9DA"/><circle r="15" fill="none" stroke="#F1E9DA" stroke-opacity=".5"/><text x="-20" y="-24" text-anchor="end" font-size="24" font-style="italic">Salento</text></g>
+<g class="port" transform="translate(100 350)"><circle r="6" fill="#F1E9DA"/><circle r="15" fill="none" stroke="#F1E9DA" stroke-opacity=".5"/><text x="22" y="40" font-size="24" font-style="italic">Il Cairo</text></g>
+<g id="boat"><path d="M-12 5 L12 5 L7 11 L-7 11Z" fill="#F1E9DA"/><path d="M0 5 L0 -15 L11 1Z" fill="#F1E9DA"/></g>
+<g transform="translate(460 380)" opacity=".6" stroke="#F1E9DA" fill="none"><circle r="28"/><path d="M0 -28 L5 0 L0 28 L-5 0Z" fill="#F1E9DA" fill-opacity=".5"/></g>
+</svg></div>
+  <section class="copy">
+    <p class="kicker">Save the date</p>
+    <h1 class="names">May <em>&amp;</em> Morgan</h1>
+    <p class="date">1 giugno 2027</p>
+    <p class="venue"><b>Villa Savino</b>, Cernusco Lombardo</p>
+    <p class="venue" style="margin-top:14px;max-width:34ch">Due porti, una rotta sola. Attracchiamo in Brianza: segnatevi il giorno, il resto ve lo raccontiamo a bordo.</p>
+  </section>
+  <p class="hint"><i></i>Gratta la carta nautica con il dito</p>
+  <div class="card" data-cover="#223A4A" data-cover-fg="#F1E9DA" data-cover-text="Gratta la carta" data-cover-text2="sotto c'è il nostro porto">
+    <img src="../foto.jpg" alt="May e Morgan" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1614323777193-379d5e6797f7?auto=format&fit=crop&q=70&w=1000'">
+    <canvas aria-label="Gratta per scoprire la foto"></canvas>
+    <div class="caption">Il nostro porto sicuro, dal Cairo al Salento.</div>
+  </div>
+  <button class="reveal-btn" type="button">Non riesco a grattare: mostrami la foto</button>
+  <div class="actions"><a class="btn cal" href="#">Aggiungi al calendario</a><button class="btn ghost share" type="button">Condividi</button></div>
+  <p class="foot">Inviti, dettagli e tutto il resto arriveranno su <a href="https://cidiciamo.si">cidiciamo.si</a>. Per ora segnatevi il giorno.</p>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+<script>gsap.registerPlugin(MotionPathPlugin);const route=document.getElementById('route'),len=route.getTotalLength();
+gsap.set(route,{strokeDasharray:len,strokeDashoffset:len});gsap.set('.port',{opacity:0});gsap.set('.copy > *',{opacity:0,y:12});
+const tl=gsap.timeline({defaults:{ease:'power2.inOut'}});
+tl.to('.port',{opacity:1,duration:.5,stagger:1.6},.2).to(route,{strokeDashoffset:0,duration:3,ease:'none'},.4)
+.to('#boat',{duration:3,ease:'none',motionPath:{path:'#route',align:'#route',alignOrigin:[.5,.5],autoRotate:90}},.4)
+.to('.copy > *',{opacity:1,y:0,duration:.8,stagger:.12},1.4);
+gsap.to('.sea',{attr:{x:60},duration:9,repeat:-1,ease:'none'});
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) tl.progress(1);</script>
+<script src="../../assets/std.js"></script>
+</body></html>
