@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow, noarchive"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Save the Date: May &amp; Morgan, 1 giugno 2027</title>
+<meta name="description" content="May e Morgan si sposano il 1 giugno 2027 a Villa Savino. Save the date.">
+<meta property="og:title" content="Save the Date: May &amp; Morgan"><meta property="og:description" content="1 giugno 2027, Villa Savino. Gratta e scopri.">
+<meta name="theme-color" content="#F1E9DA">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&family=Marcellus&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../assets/std.css">
+<style>:root{--bg:#F1E9DA;--accent:#6E7C4A;--accent-2:#B46A4C;--card:#F7F1E5;--radius:3px}
+.names{font-family:"Jost",sans-serif;font-weight:300;letter-spacing:-.03em;font-size:clamp(44px,13vw,72px)}.names em{font-family:"Cormorant Garamond",serif}
+.motif{background:#F1E9DA}</style></head>
+<body>
+<main class="std">
+  <div class="motif"><svg id="tsvg" viewBox="0 0 520 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><g id="star"><path d="M0 -30 L8 -8 L30 0 L8 8 L0 30 L-8 8 L-30 0 L-8 -8 Z"/></g></defs><g id="tiles"></g></svg></div>
+  <section class="copy">
+    <p class="kicker">Save the date</p>
+    <h1 class="names">May <em>&amp;</em> Morgan</h1>
+    <p class="date">1 giugno 2027</p>
+    <p class="venue"><b>Villa Savino</b>, Cernusco Lombardo</p>
+    <p class="venue" style="margin-top:14px;max-width:34ch">Dopo anni di prove, i pezzi combaciano. Segnatevi il giorno in cui li incolliamo per sempre.</p>
+  </section>
+  <p class="hint"><i></i>Gratta il mosaico con il dito</p>
+  <div class="card" data-cover="#6E7C4A" data-cover-fg="#F1E9DA" data-cover-text="Gratta le piastrelle" data-cover-text2="sotto si nasconde l'incastro">
+    <img src="../foto.jpg" alt="May e Morgan" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1614323777193-379d5e6797f7?auto=format&fit=crop&q=70&w=1000'">
+    <canvas aria-label="Gratta per scoprire la foto"></canvas>
+    <div class="caption">Due geometrie, un disegno solo.</div>
+  </div>
+  <button class="reveal-btn" type="button">Non riesco a grattare: mostrami la foto</button>
+  <div class="actions"><a class="btn cal" href="#">Aggiungi al calendario</a><button class="btn ghost share" type="button">Condividi</button></div>
+  <p class="foot">Inviti, dettagli e tutto il resto arriveranno su <a href="https://cidiciamo.si">cidiciamo.si</a>. Per ora segnatevi il giorno.</p>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+<script>const g=document.getElementById('tiles'),svg=document.getElementById('tsvg'),cols=9,rows=8,size=62,cx=260,cy=220,colors=['#6E7C4A','#3E4A2C','#B46A4C','#D4BC94'],ns='http://www.w3.org/2000/svg';
+for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){const u=document.createElementNS(ns,'use');u.setAttribute('href','#star');const x=cx+(c-(cols-1)/2)*size,y=cy+(r-(rows-1)/2)*size;u.setAttribute('transform',`translate(${x} ${y})`);u.setAttribute('fill',colors[(r+c)%4]);u.style.transformOrigin=`${x}px ${y}px`;u.dataset.c=(r+c)%4;g.appendChild(u);}
+const tiles=g.querySelectorAll('use');gsap.set(tiles,{scale:0});gsap.set('.copy > *',{opacity:0,y:10});
+const tl=gsap.timeline();tl.to(tiles,{scale:1,rotation:45,duration:1.1,ease:'back.out(1.4)',stagger:{amount:1.3,grid:[rows,cols],from:'center'}})
+.to(tiles,{fill:(i,t)=>colors[(+t.dataset.c+1)%4],duration:.7,stagger:{amount:1,grid:[rows,cols],from:'center'}},'-=.6').to('.copy > *',{opacity:1,y:0,duration:.8,stagger:.14},'-=.8');
+gsap.to(tiles,{rotation:'+=45',duration:1.6,ease:'power2.inOut',repeat:-1,repeatDelay:6,stagger:{amount:1.2,grid:[rows,cols],from:'center'}});
+svg.addEventListener('pointermove',e=>{const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(svg.getScreenCTM().inverse());tiles.forEach(t=>{const m=t.getAttribute('transform').match(/translate\(([\d.]+) ([\d.]+)\)/);if(Math.hypot(p.x-m[1],p.y-m[2])<80)gsap.to(t,{scale:.5,duration:.25,overwrite:'auto',onComplete:()=>gsap.to(t,{scale:1,duration:1,ease:'elastic.out(1,.5)'})});});});
+window.coverPattern=(ctx,w,h)=>{ctx.fillStyle='rgba(241,233,218,.14)';const s=44;for(let y=s/2;y<h;y+=s)for(let x=s/2;x<w;x+=s){ctx.save();ctx.translate(x,y);ctx.rotate(Math.PI/4);ctx.fillRect(-9,-9,18,18);ctx.restore();}};
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) tl.progress(1);</script>
+<script src="../../assets/std.js"></script>
+</body></html>
